@@ -1,11 +1,12 @@
 from flask import Flask, redirect, url_for
-from prometheus_client import Summary
+from prometheus_flask_exporter import PrometheusMetrics
 import json
 from datetime import datetime
 import time
 import random
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 @app.route('/')
 def index():
