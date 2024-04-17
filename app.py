@@ -6,7 +6,7 @@ import time
 import random
 
 app = Flask(__name__)
-metrics = PrometheusMetrics(app)
+metrics = PrometheusMetrics(app, group_by='endpoint')
 
 @app.route('/')
 def index():
